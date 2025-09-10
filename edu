@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Histórias ÉPICAS do Homem-Aranha | Edição QYAQUA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #00308f, #c8102e);
+            color: #fff;
+            padding: 0;
+            scroll-behavior: smooth; /* ROLAGEM SUAVE */
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+            border: 4px double #c8102e;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px #000;
+            color: #ffcc00;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .post {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .post h2 {
+            font-size: 2.1rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .post-meta {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: #e0e0e0;
+            font-style: italic;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 3px solid #c8102e;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .post-content h3 {
+            font-size: 1.6rem;
+            margin: 40px 0 20px;
+            color: #ffcc00;
+            display: flex;
+            align-items: center;
+            border-left: 5px solid #c8102e;
+            padding-left: 15px;
+        }
+
+        .post-content p {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            text-align: justify;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .youtube-video {
+            width: 100%;
+            height: 400px;
+            margin: 30px 0;
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            background: #000;
+        }
+
+        .post-tags {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 2px dashed #ffcc00;
+            text-align: center;
+        }
+
+        .post-tags a {
+            display: inline-block;
+            background: #c8102e;
+            color: white;
+            padding: 10px 20px;
+            margin: 8px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid #ffcc00;
+        }
+
+        .post-tags a:hover {
+            background: #ffcc00;
+            color: #00308f;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* MENU FINAL ESTILO "COISINHAS LEGAIS" */
+        .fun-menu {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid #ffcc00;
+        }
+
+        .fun-menu h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #ffcc00;
+        }
+
+        .fun-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .fun-menu-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px 15px;
+            border-radius: 12px;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .fun-menu-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+        }
+
+        .fun-menu-item a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .fun-menu-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* SEÇÕES SECRETAS DO MUNDO QYAQUA */
+        .qyaqua-section {
+            display: none;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #0b0b2d, #4a0000);
+            margin: 40px auto;
+            border-radius: 20px;
+            max-width: 900px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border: 3px solid #ffcc00;
+            position: relative;
+        }
+
+        .qyaqua-section:target {
+            display: block;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .qyaqua-section h2 {
+            color: #ffcc00;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .qyaqua-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .back-button {
+            display: block;
+            margin: 40px auto 0;
+            padding: 15px 30px;
+            background: #c8102e;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            width: fit-content;
+            border: 2px solid #ffcc00;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #ffcc00;
+            color: #00308f;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .post h2 {
+                font-size: 1.7rem;
+            }
+            .youtube-video {
+                height: 250px;
+            }
+            .post {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>HOMEM-ARANHA: 5 HISTÓRIAS QUE ABALARAM O UNIVERSO MARVEL</h1>
+            <p>SITE CRIADO POR AUGUSTO STRAPASSON • Trailers Reais • HQs que Viraram Lenda</p>
+        </header>
+
+        <main>
+            <article class="post">
+                <h2>Prepare-se: emoção, ação e teia voando por todos os lados!</h2>
+                <div class="post-meta">Atualizado em Maio de 2025 • HQs + Filmes + Trailers Épicos</div>
+
+                <img src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/04/homem-aranha-tobey-tom-andrew.jpg?w=1200&h=900&crop=1" alt="Homem-Aranha - Edição Marvel" class="featured-image">
+
+                <div class="post-content">
+                    <p>Você é daqueles que sabe o nome do primeiro vilão do Homem-Aranha? Que chora quando Gwen cai da ponte? Que discute até hoje se Peter deveria ter apagado seu casamento? Então esse post é PRA VOCÊ. Separamos as 5 histórias mais impactantes — com vídeos RECENTES e oficiais pra você sentir o gostinho da emoção!</p>
+
+                    <h3>1. Across the Spider-Verse (2023) — O Multiverso Explode!</h3>
+                    <p>O filme que quebrou a internet — e nossos corações. Miles, Gwen, e centenas de Aranhas em uma animação visualmente revolucionária. O trailer oficial ainda dá arrepios!</p>
+                    <iframe class="youtube-video" src="https://www.youtube.com/embed/shW9i6k8cB0" title="Spider-Man: Across the Spider-Verse Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    <h3>2. No Way Home (2021) — O Retorno dos Ícones</h3>
+                    <p>Tobey, Andrew e Tom juntos. Sim, isso aconteceu. O filme que uniu gerações e trouxe de volta vilões e heróis do passado. O trailer oficial quebrou recordes!</p>
+                   <iframe class="youtube-video" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="Spider-Man: No Way Home Official Trailer" frameborder="0" allowfullscreen></iframe>
+
+                    <h3>3. One More Day — O Pacto com o Demônio (HQ)</h3>
+                    <p>Peter Parker vende sua alma para salvar a Tia May. Sim, isso aconteceu nos quadrinhos. Um dos arcos mais controversos — e inesquecíveis — da Marvel.</p>
+                   <iframe class="youtube-video" src="https://www.youtube.com/embed/mC7Hd-7g0wc" title="Spider-Man One More Day Explained" frameborder="0" allowfullscreen></iframe>
+
+                    <h3>4. Kraven’s Last Hunt — A Caçada Final</h3>
+                    <p>Considerada a melhor história do Homem-Aranha de todos os tempos. Sombria, poética, brutal. Kraven enterra Peter vivo e toma seu lugar. Uma obra-prima dos anos 80, mas com análises recentes incríveis!</p>
+                    <iframe class="youtube-video" src="https://www.youtube.com/embed/HsZ_lC7O6pA" title="Kraven's Last Hunt Explained" frameborder="0" allowfullscreen></iframe>
+
+                    <h3>5. The Death of Gwen Stacy — O Dia que Tudo Mudou</h3>
+                    <p>O momento que provou que ninguém está seguro nos quadrinhos. Gwen morre, Peter falha, e o mundo nerd nunca mais foi o mesmo. Conheça a origem de tudo!</p>
+                    <iframe class="youtube-video" src="https://www.youtube.com/embed/aLBHCGGhOIU" title="The Death of Gwen Stacy Explained" frameborder="0" allowfullscreen></iframe>
+                     <!-- 🎁 MENU DE "COISINHAS LEGAIS" -->
+        <section class="fun-menu">
+            <h3> COISINHAS LEGAIS PRA EXPLORAR</h3>
+            <p>Entra aí, tem muito mais onde isso veio!</p>
+
+            <div class="fun-menu-grid">
+                <div class="fun-menu-item">
+                    <a href="https://www.marvel.com/" target="_blank">Universo Marvel Oficial</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="https://www.disneyplus.com/pt-br" target="_blank">Assistir Filmes Marvel</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="https://www.marvel.com/comics" target="_blank">HQs Digitais Marvel</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="https://www.youtube.com/@Marvel" target="_blank">Canal Oficial Marvel</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="https://www.ign.com/br" target="_blank">Notícias de Games e Filmes</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="https://www.cbr.com/" target="_blank">HQs e Teorias Nerds</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="https://www.screenrant.com/" target="_blank">Easter Eggs e Explicações</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="https://www.lego.com/pt-br/themes/marvel" target="_blank">LEGO Marvel</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 🎁 MENU DE "COISINHAS LEGAIS" -->
+        <section class="fun-menu">
+            <h3>✨ ENTRE NO MUNDO DO SPIDER-MAN </h3>
+            <p>Clique em qualquer botão e descubra segredos, teorias e curiosidades EXCLUSIVAS!</p>
+
+            <div class="fun-menu-grid">
+                <div class="fun-menu-item">
+                    <a href="#universo-qyaqua">Universo Spider-Man</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="#hq-secretas">HQs Secretas</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="#viloes-esquecidos">Vilões Esquecidos</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="#teorias-loucas">Teorias Loucas</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="#filmes-cancelados">Filmes Cancelados</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="#cosplays-epicos">Cosplays Épicos</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="#jogos-raros">Jogos Raros</a>
+                </div>
+                <div class="fun-menu-item">
+                    <a href="#futuro-aranha">Futuro do Aranha</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🌌 SEÇÕES SECRETAS DO MUNDO QYAQUA -->
+
+        <section id="hq-secretas" class="qyaqua-section">
+            <h2>📚 HQs SECRETAS QUE A MARVEL NUNCA QUIS QUE VOCÊ LESSE</h2>
+            <p>Existem histórias enterradas nos arquivos da Marvel — como “Spider-Man vs. Ronald McDonald” (1987, edição promocional cancelada) ou “Aranha no Espaço Sideral” (uma HQ experimental dos anos 90 com arte psicodélica).</p>
+            <p>Dizem que quem lê essas HQs ganha poderes... ou enlouquece. Você arrisca?</p>
+            <a href="#" class="back-button">← Voltar ao Início</a>
+        </section>
+
+        <section id="viloes-esquecidos" class="qyaqua-section">
+            <h2>🦹‍♂️ VILÕES ESQUECIDOS QUE MERECEM UM RETORNO</h2>
+            <p>Já ouviu falar do **Senhor Negativo**? Ou do **Homem de Areia Reformado**? E o **Kangu-Aranha**? (sim, isso quase aconteceu em 2015).</p>
+            <p>Aqui no QYAQUA, a gente resgata os vilões que o tempo esqueceu — e inventa uns novos também. Quem sabe o próximo vilão não é... VOCÊ?</p>
+            <a href="#" class="back-button">← Voltar ao Início</a>
+        </section>
+
+        <section id="teorias-loucas" class="qyaqua-section">
+            <h2>🧠 TEORIAS LOUCAS (MAS TALVEZ VERDADEIRAS)</h2>
+            <p>E se Gwen Stacy nunca morreu? E se o Venom era o narrador de todas as histórias? E se o Homem-Aranha for, na verdade, um experimento da Illuminati para controlar o multiverso?</p>
+            <p>No QYAQUA, nenhuma teoria é absurda demais. Até porque... e se for verdade?</p>
+            <a href="#" class="back-button">← Voltar ao Início</a>
+        </section>
+
+        <section id="filmes-cancelados" class="qyaqua-section">
+            <h2>🎬 FILMES CANCELADOS QUE VOCÊ PRECISA CONHECER</h2>
+            <p>Em 1992, James Cameron quase dirigiu um Homem-Aranha R-Rated com Arnold Schwarzenegger como vilão. Em 2008, um filme do Aranha Noir quase saiu. Em 2020, um filme do Aranha 2099 foi cancelado na pré-produção.</p>
+            <p>Aqui, a gente revive esses filmes perdidos — com trailers fake, elencos imaginários e reviews de críticos que nem existem.</p>
+            <a href="#" class="back-button">← Voltar ao Início</a>
+        </section>
+
+        <section id="cosplays-epicos" class="qyaqua-section">
+            <h2>🧵 COSPLAYS ÉPICOS QUE QUEBRARAM A INTERNET</h2>
+            <p>Do Aranha bebê ao Aranha vovô, passando pelo Aranha de meia-calça listrada feita de crochê — o mundo dos cosplays é infinito. Conheça os cosplayers que foram presos por “parecerem muito reais” e os que foram contratados pela Marvel por acidente.</p>
+            <p>Você também pode entrar nesse hall da fama. Basta uma máscara, coragem... e teia sintética.</p>
+            <a href="#" class="back-button">← Voltar ao Início</a>
+        </section>
+
+        <section id="jogos-raros" class="qyaqua-section">
+            <h2>🎮 JOGOS RAROS DO HOMEM-ARANHA QUE VOCÊ NUNCA JOGOU</h2>
+            <p>“Spider-Man: The Diner Game” (1995, exclusivo de fliperama japonês) — Peter trabalha num restaurante enquanto luta contra vilões que roubam hambúrgueres. Ou “Spider-Man: Typing Adventure” (2001) — derrote vilões digitando frases em 60 segundos.</p>
+            <p>Esses jogos existem? Talvez. Mas no QYAQUA, eles são lendas vivas.</p>
+            <a href="#" class="back-button">← Voltar ao Início</a>
+        </section>
+
+        <section id="futuro-aranha" class="qyaqua-section">
+            <h2>🔮 O FUTURO DO HOMEM-ARANHA SEGUNDO GUTO</h2>
+            <p>Em 2030, Peter Parker se aposenta e passa o manto para sua filha, May Parker. Em 2045, o Homem-Aranha vira presidente dos EUA. Em 2077, uma IA do Aranha domina a galáxia — mas com bom humor e responsabilidade.</p>
+            <p>O futuro é incerto...</p>
+            <a href="#" class="back-button">← Voltar ao Início</a>
+        </section>
+
+        <footer>
+            <p> 2025 Edição Oficial Augusto Strapasson —.</p>
+            <p>Salve, herói. A cidade dorme... mas Guto nunca fecha.💙</p>
+        </footer>
+
+    </div>
+</body>
+</html>
